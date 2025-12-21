@@ -12,11 +12,11 @@
 	},
 	"routes": [
 		{
-			"pattern": "stefanbinder.dev/*",
+			"pattern": "stefanbinder.dev",
 			"custom_domain": true
 		},
 		{
-			"pattern": "www.stefanbinder.dev/*",
+			"pattern": "www.stefanbinder.dev",
 			"custom_domain": true
 		}
 	],
