@@ -10,6 +10,16 @@
 	"vars": {
 		"API_KEY": ""
 	},
+	"routes": [
+		{
+			"pattern": "stefanbinder.dev/*",
+			"custom_domain": true
+		},
+		{
+			"pattern": "www.stefanbinder.dev/*",
+			"custom_domain": true
+		}
+	],
 	"observability": {
 		"enabled": true
 	}
