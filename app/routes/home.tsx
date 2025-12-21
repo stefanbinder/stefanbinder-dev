@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import { GlassCard } from '../components/GlassCard';
-import { CERTIFICATES, USER_BIO, USER_NAME, USER_TITLE } from '../constants';
+import { CERTIFICATES, USER_BIO, USER_EMAIL, USER_NAME, USER_TITLE } from '../constants';
 import { Terminal, Cloud } from 'lucide-react';
 
 export function meta({}: Route.MetaArgs) {
@@ -12,9 +12,9 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   const techStack = [
-    'React 18', 'TypeScript', 'Next.js', 'Remix',
-    'Kubernetes', 'Google Cloud Platform', 'Tailwind CSS',
-    'Node.js', 'GraphQL', 'ArgoCD', 'Gemini API'
+    'React 19', 'TypeScript', 'Next.js', 'React Router v7 (Remix)',
+    'Kubernetes', 'Cloudflare', 'Google Cloud Platform', 'Tailwind CSS',
+    'Node.js', 'GraphQL', 'ArgoCD', 'Argo Workflows'
   ];
 
   return (
@@ -100,7 +100,7 @@ export default function Home() {
             I'm currently open for new opportunities in Cloud Engineering and Frontend Development.
           </p>
           <a
-            href="mailto:stefan.binder89@gmail.com"
+            href={`mailto:${USER_EMAIL}`}
             className="inline-flex items-center px-8 py-3 rounded-full bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]"
           >
             Get in Touch
