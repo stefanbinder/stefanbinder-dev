@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles } from 'lucide-react';
 import { GlassCard } from './GlassCard';
-import { sendMessageToGemini } from '../services/gemini';
 import type { ChatMessage } from '../types';
 import { ChatRole } from '../types';
 
@@ -32,9 +31,23 @@ export const ChatWidget: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const response = await sendMessageToGemini(userMsg);
-      setMessages(prev => [...prev, { role: ChatRole.MODEL, text: response }]);
+      const formData = new FormData();
+      formData.append("message", userMsg);
+
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json() as { error?: string; response?: string };
+
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
+      setMessages(prev => [...prev, { role: ChatRole.MODEL, text: data.response || "Sorry, no response received." }]);
     } catch (error) {
+      console.error("Chat error:", error);
       setMessages(prev => [...prev, { role: ChatRole.MODEL, text: "Sorry, I encountered an error." }]);
     } finally {
       setIsLoading(false);

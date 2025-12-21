@@ -44,38 +44,45 @@ npm run build
 
 ## Deployment
 
-### Docker Deployment
+### Cloudflare Workers Deployment
 
-To build and run using Docker:
+This application is configured for deployment to Cloudflare Workers.
+
+#### Environment Variables
+
+For local development, create a `.dev.vars` file in the root directory:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+cp .dev.vars.example .dev.vars
+# Edit .dev.vars and add your Gemini API key
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+For production, set environment variables using Wrangler:
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
+```bash
+npx wrangler secret put API_KEY
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+
+#### Deploy to Production
+
+To build and deploy directly to production:
+
+```bash
+npm run deploy
+```
+
+#### Deploy a Preview
+
+To deploy a preview URL for testing:
+
+```bash
+npx wrangler versions upload
+```
+
+You can then promote a version to production after verification or roll it out progressively:
+
+```bash
+npx wrangler versions deploy
 ```
 
 ## Styling

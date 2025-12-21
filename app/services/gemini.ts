@@ -2,17 +2,24 @@ import { GoogleGenAI } from "@google/genai";
 import type { Chat } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from '../constants';
 
-// Initialize the API client
-// Note: In a real production app, you might want to proxy this through a backend to hide the key,
-// but for this client-side demo we use the env var directly as per instructions.
-// We default to an empty string if undefined to prevent initialization crashes in static builds without env vars.
-const apiKey = process.env.API_KEY || '';
-const ai = new GoogleGenAI({ apiKey });
+// For Cloudflare Workers, we'll pass the API key from the loader
+// For client-side usage, this will need to be coordinated differently
+let apiKeyCache: string = '';
+
+export const initializeGeminiClient = (apiKey: string) => {
+  apiKeyCache = apiKey;
+};
+
+const getApiKey = (): string => {
+  return apiKeyCache;
+};
 
 let chatSession: Chat | null = null;
 
 export const getChatSession = (): Chat => {
-  if (!chatSession) {
+  const apiKey = getApiKey();
+  if (!chatSession && apiKey) {
+    const ai = new GoogleGenAI({ apiKey });
     chatSession = ai.chats.create({
       model: 'gemini-2.5-flash',
       config: {
@@ -20,10 +27,11 @@ export const getChatSession = (): Chat => {
       },
     });
   }
-  return chatSession;
+  return chatSession!;
 };
 
 export const sendMessageToGemini = async (message: string): Promise<string> => {
+  const apiKey = getApiKey();
   if (!apiKey) {
     return "I am currently running in offline mode (API Key missing). Please configure the environment variables to enable the AI assistant.";
   }
