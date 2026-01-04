@@ -71,6 +71,26 @@ export const EXPERIENCE: Experience[] = [
       'Customized and Enhanced Gentics products, including ECMS Content.Node, Java Web Portal.Node, and the JS wysiwyg Editor Aloha.',
       'Developed a Content-Importer into ECMS via a NodeJS application and a Social Media Wall PHP application.'
     ]
+  },
+  {
+    id: 'e5',
+    role: 'HELPDESK REPRESENTATIVE',
+    company: 'CSC AUSTRIA GMBH (WWW.CSC.COM)',
+    period: '08/2011 - 11/2011',
+    description: [
+      'Abteilung: MSS Managed Services Sector',
+      'Helpdesk Representative, 1st & 2nd Level Support',
+      'Network & Server Administration',
+    ]
+  },
+  {
+    id: 'e6',
+    role: 'SACHBEARBEITER',
+    company: 'RAIFFEISEN DATEN SERVICE CENTER (WWW.RSC.AT)',
+    period: '05/2008 - 07/2011',
+    description: [
+      'Department: Cash Management Support & Infodienste Maintainance of Cash-Management accounts, cashpooling (arrangements, change of condition, deletions), diverse statisticreports and compensation of charges. Customer correspondence for Western Union',
+    ]
   }
 ];
 

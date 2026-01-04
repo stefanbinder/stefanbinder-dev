@@ -25,7 +25,7 @@ export default function Home() {
           <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-full blur opacity-75 animate-pulse"></div>
           <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/20 bg-gray-800">
             <img
-              src="https://picsum.photos/400/400"
+              src="/stefan-binder-engineer.jpg"
               alt={USER_NAME}
               className="w-full h-full object-cover"
             />

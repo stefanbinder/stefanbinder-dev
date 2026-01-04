@@ -14,18 +14,19 @@ export default function CV() {
   return (
     <div className="max-w-4xl mx-auto pt-20 pb-24 px-4">
       <div className="flex justify-end mb-6 print:hidden animate-fadeInUp">
-        <button
-          onClick={() => window.print()}
+        <a
+          href="/CV-Stefan-Binder-Senior-Full-Stack-Engineer.pdf"
+          download="CV-Stefan-Binder-Senior-Full-Stack-Engineer.pdf"
           className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors font-medium shadow-lg"
         >
           <Download size={18} />
-          Download PDF
-        </button>
+          Download CV
+        </a>
       </div>
 
-      <GlassCard delay={200} className="p-8 md:p-12 min-h-screen bg-white/95 text-gray-800 print:shadow-none print:border-none print:bg-white">
+      <GlassCard delay={200} className="p-8 md:p-12 mb-6 bg-white/95 text-gray-800">
         {/* CV Header */}
-        <header className="border-b-2 border-gray-100 pb-8 mb-8">
+        <header className="border-b-2 border-gray-100 pb-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 tracking-tight">{USER_NAME.toUpperCase()}</h1>
@@ -47,7 +48,7 @@ export default function CV() {
         </header>
 
         {/* Bio Section */}
-        <section className="mb-10">
+        <section>
           <p className="text-gray-700 leading-relaxed text-lg">
             Highly versatile Senior Full Stack Engineer focused on defining future-proof systems,
             with a recent high focus on Frontend development. I drive high-performing teams by
@@ -56,7 +57,8 @@ export default function CV() {
             excellence.
           </p>
         </section>
-
+      </GlassCard>
+      <GlassCard delay={200} className="p-8 md:p-12 mb-6 bg-white/95 text-gray-800">
         {/* Experience */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2 uppercase tracking-wider">
@@ -81,7 +83,8 @@ export default function CV() {
             ))}
           </div>
         </section>
-
+      </GlassCard>
+      <GlassCard delay={200} className="p-8 md:p-12 mb-6 bg-white/95 text-gray-800">
         <div className="grid md:grid-cols-2 gap-10">
           {/* Education */}
           <section>
@@ -125,24 +128,47 @@ export default function CV() {
             </div>
           </section>
         </div>
-
+      </GlassCard>
+      <GlassCard delay={200} className="p-8 md:p-12 mb-6 bg-white/95 text-gray-800">
         {/* Certifications (Visual only if desired, logic kept from previous request) */}
         {CERTIFICATES.length > 0 && (
-          <section className="mt-10 pt-10 border-t border-gray-100">
+          <section className="border-t border-gray-100">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 uppercase tracking-wider">Certifications</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {CERTIFICATES.map(cert => (
-                <div key={cert.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                <div key={cert.id} className="flex items-center gap-3 p-3 bg-gray-200 hover:bg-gray-300 rounded-lg">
                   <img src={cert.imageUrl} alt="Cert" className="w-8 h-8 object-contain" />
                   <div>
                     <div className="font-bold text-gray-900 text-sm">{cert.name}</div>
-                    <div className="text-xs text-gray-500">{cert.issuer}, {cert.date}</div>
+                    <div className="text-xs text-gray-900">{cert.issuer}, {cert.date}</div>
                   </div>
                 </div>
               ))}
             </div>
           </section>
         )}
+      </GlassCard>
+      <GlassCard delay={200} className="p-8 md:p-12 mb-6 bg-white/95 text-gray-800">
+        {/* Voluntary Services */}
+        <section className="border-t border-gray-100">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 uppercase tracking-[0.3em]">
+            Voluntary Service
+          </h2>
+          <ul className="space-y-2 text-gray-700">
+            <li className="flex items-start">
+              <span className="mr-3">•</span>
+              <span className="font-medium">Freiwillige Feuerwehr (Fire Brigade)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3">•</span>
+              <span className="font-medium">TedX León Volunteer 2018/2019</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3">•</span>
+              <span className="font-medium">Toastmaster Member 2021</span>
+            </li>
+          </ul>
+        </section>
 
       </GlassCard>
     </div>
