@@ -23,9 +23,9 @@ export default function Home() {
       <section className="flex flex-col items-center text-center space-y-8 pt-20 animate-fadeInUp">
         <div className="relative">
           <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-full blur opacity-75 animate-pulse"></div>
-          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/20 bg-gray-800">
+          <div className="relative w-50 h-64 md:w-60 md:h-80 rounded-full overflow-hidden border-2 border-white/20 bg-gray-800">
             <img
-              src="/stefan-binder-engineer.jpg"
+              src="/stefan-binder-full-stack-engineer.jpg"
               alt={USER_NAME}
               className="w-full h-full object-cover"
             />
