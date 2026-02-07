@@ -1,0 +1,9 @@
+
+> dev
+> react-router dev
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  Debug:   http://localhost:5173/__debug
+7:50:06 PM [vite] (client) ✨ new dependencies optimized: lucide-react
+7:50:06 PM [vite] (client) ✨ optimized dependencies changed. reloading
