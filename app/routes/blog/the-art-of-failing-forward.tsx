@@ -89,7 +89,7 @@ export default function TheArtOfFailingForward() {
                 <strong className="text-emerald-300 font-semibold">MyIndependent AI:</strong> My lab for personal data sovereignty. I’m building systems to pipe messy data (WhatsApp, Dropbox, Mail) into a private AI that actually understands you. No over-engineered microservices—just utility.
               </li>
               <li>
-                <strong className="text-emerald-300 font-semibold">Tatiland:</strong> My heart project. We’re creating bilingual children's books and materials to bridge cultural gaps. It’s my constant reminder that tech must serve a human purpose.
+                <a href="https://tatiland.store" target="_blank" rel="noopener noreferrer" className="text-emerald-300 font-semibold hover:underline">Tatiland:</a> My heart project. We’re creating bilingual children's books and materials to bridge cultural gaps. It’s my constant reminder that tech must serve a human purpose.
               </li>
             </ol>
           </section>
