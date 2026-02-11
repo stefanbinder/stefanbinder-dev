@@ -136,13 +136,20 @@ export default function CV() {
             <h2 className="text-2xl font-bold text-gray-800 mb-6 uppercase tracking-wider">Certifications</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {CERTIFICATES.map(cert => (
-                <div key={cert.id} className="flex items-center gap-3 p-3 bg-gray-200 hover:bg-gray-300 rounded-lg">
-                  <img src={cert.imageUrl} alt="Cert" className="w-8 h-8 object-contain" />
+                <a
+                  key={cert.id}
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors group"
+                >
+                  <img src={cert.imageUrl} alt="Cert" className="w-32 h-32 object-contain" />
                   <div>
-                    <div className="font-bold text-gray-900 text-sm">{cert.name}</div>
-                    <div className="text-xs text-gray-900">{cert.issuer}, {cert.date}</div>
+                    <div className="font-bold text-gray-900 text-base mb-1 group-hover:text-emerald-700 transition-colors">{cert.name}</div>
+                    <div className="text-sm text-gray-700">{cert.issuer}</div>
+                    <div className="text-sm text-gray-600">{cert.date}</div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </section>
