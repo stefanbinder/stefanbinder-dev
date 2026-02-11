@@ -71,23 +71,31 @@ export default function Home() {
 
         <div className="flex flex-wrap justify-center gap-6">
           {CERTIFICATES.map((cert, index) => (
-            <GlassCard key={cert.id} hoverEffect delay={400 + (index * 100)} className="p-6 group cursor-pointer w-full md:max-w-md">
-              <div className="flex flex-col items-center text-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center p-3 group-hover:scale-110 transition-transform duration-300 border border-white/10">
-                  <img src={cert.imageUrl} alt={cert.issuer} className="w-full h-full object-contain" />
+            <a
+              key={cert.id}
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full md:max-w-md group"
+            >
+              <GlassCard hoverEffect delay={400 + (index * 100)} className="p-6 cursor-pointer w-full h-full">
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="w-32 h-32 rounded-full bg-white/5 flex items-center justify-center p-3 group-hover:scale-110 transition-transform duration-300 border border-white/10">
+                    <img src={cert.imageUrl} alt={cert.issuer} className="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1 group-hover:text-emerald-300 transition-colors">{cert.name}</h4>
+                    <p className="text-sm text-gray-400">{cert.issuer}</p>
+                    <p className="text-xs text-gray-500 mt-2">Issued {cert.date}</p>
+                  </div>
+                  <div className="mt-auto pt-4">
+                    <span className="text-xs font-medium px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                      Verified
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-1 group-hover:text-emerald-300 transition-colors">{cert.name}</h4>
-                  <p className="text-sm text-gray-400">{cert.issuer}</p>
-                  <p className="text-xs text-gray-500 mt-2">Issued {cert.date}</p>
-                </div>
-                <div className="mt-auto pt-4">
-                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20">
-                    Verified
-                  </span>
-                </div>
-              </div>
-            </GlassCard>
+              </GlassCard>
+            </a>
           ))}
         </div>
       </section>

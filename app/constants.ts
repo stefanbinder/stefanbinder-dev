@@ -16,12 +16,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const CERTIFICATES: Certificate[] = [
   {
     id: '3',
-    name: 'Associate Cloud Engineer',
+    name: 'Associate Cloud Engineer Certification',
     issuer: 'Google Cloud',
     date: 'January 2026',
-    // Switched to a cleaner icon-only SVG that centers better in a circle than the full text logo
-    imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
-    link: 'https://cloud.google.com/learn/certification/cloud-engineer/'
+    imageUrl: '/associate-cloud-engineer-certification.png',
+    link: 'https://www.credly.com/badges/dd861aaf-4eb6-4a76-bf94-a4455a512b8b/public_url'
   }
 ];
 
