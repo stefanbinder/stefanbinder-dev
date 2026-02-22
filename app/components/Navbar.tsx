@@ -1,4 +1,4 @@
-import { FileText, Home, Github, Linkedin, Mail } from 'lucide-react';
+import { FileText, Home, Github, Linkedin, Mail, Book } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import { SOCIAL_LINKS } from '../constants';
 
@@ -33,6 +33,16 @@ export const Navbar: React.FC = () => {
           aria-label="CV"
         >
           <FileText size={20} />
+        </Link>
+
+        <div className="w-px h-6 bg-white/10 mx-1" />
+
+        <Link
+          to="/blog"
+          className={`p-2 rounded-full transition-colors ${currentPath.startsWith('/blog') ? 'bg-white/10 text-white' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
+          aria-label="Blog"
+        >
+          <Book size={20} />
         </Link>
 
         <div className="w-px h-6 bg-white/10 mx-1" />
