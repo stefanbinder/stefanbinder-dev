@@ -1,7 +1,7 @@
 import type { Route } from "./+types/cv";
 import { GlassCard } from '../components/GlassCard';
 import { Download, Briefcase, GraduationCap, Phone, Mail } from 'lucide-react';
-import { EXPERIENCE, USER_NAME, USER_TITLE, CERTIFICATES, EDUCATION, USER_PHONE, USER_EMAIL, SKILLS } from '../constants';
+import { EXPERIENCE, USER_NAME, USER_TITLE, CERTIFICATES, EDUCATION, USER_PHONE, USER_EMAIL, SKILLS, LANGUAGES } from '../constants';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -130,6 +130,24 @@ export default function CV() {
         </div>
       </GlassCard>
       <GlassCard delay={200} className="p-8 md:p-12 mb-6 bg-white/95 text-gray-800">
+        {/* Languages */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2 uppercase tracking-wider">
+            <LanguageIcon className="text-emerald-600" />
+            Languages
+          </h2>
+          <div className="space-y-3">
+            {LANGUAGES.map((lang) => (
+              <div key={lang.id}>
+                <span className="text-lg mr-2">{lang.flag}</span>
+                <span className="font-semibold text-gray-900">{lang.name}</span>
+                <span className="text-sm text-gray-600 font-medium ml-2">({lang.level})</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      </GlassCard>
+      <GlassCard delay={200} className="p-8 md:p-12 mb-6 bg-white/95 text-gray-800">
         {/* Certifications (Visual only if desired, logic kept from previous request) */}
         {CERTIFICATES.length > 0 && (
           <section className="border-t border-gray-100">
@@ -190,5 +208,24 @@ const AwardIcon = ({ className }: { className?: string }) => (
   >
     <circle cx="12" cy="8" r="7"></circle>
     <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+  </svg>
+);
+
+const LanguageIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    <path d="M2 12h20"></path>
   </svg>
 );

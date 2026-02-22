@@ -23,6 +23,13 @@ export interface Education {
   details?: string;
 }
 
+export interface Language {
+  id: string;
+  name: string;
+  level: string;
+  flag: string;
+}
+
 export interface Project {
   id: string;
   title: string;
