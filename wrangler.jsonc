@@ -7,9 +7,6 @@
 	"name": "stefanbinder-dev",
 	"compatibility_date": "2025-04-04",
 	"main": "./workers/app.ts",
-	"vars": {
-		"API_KEY": ""
-	},
 	"routes": [
 		{
 			"pattern": "stefanbinder.dev",

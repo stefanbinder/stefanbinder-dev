@@ -111,8 +111,14 @@ export const ChatWidget: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about my skills..."
+                maxLength={500}
                 className="w-full bg-black/20 border border-white/10 rounded-xl py-3 pl-4 pr-12 text-sm text-white focus:outline-none focus:border-emerald-500/50 transition-colors placeholder-gray-500"
               />
+              {input.length > 0 && (
+                <span className={`absolute right-12 top-1/2 -translate-y-1/2 text-xs ${
+                  input.length >= 450 ? 'text-red-400' : 'text-gray-500'
+                }`}>{input.length}/500</span>
+              )}
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
