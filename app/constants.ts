@@ -1,4 +1,4 @@
-import type { Certificate, Experience, SocialLink, Education, Language } from './types';
+import type { Certificate, Experience, SocialLink, Education, Language, Project } from './types';
 
 export const USER_NAME = "Stefan Binder";
 export const USER_TITLE = "Senior Full Stack Engineer";
@@ -151,6 +151,30 @@ export const LANGUAGES: Language[] = [
   }
 ];
 
+export const PROJECTS: Project[] = [
+  {
+    id: 'p1',
+    title: 'Tatiland',
+    description: 'An e-commerce platform for selling bilingual children\'s books, featuring a web storefront (Next.js) and a React Native mobile app. Books are generated from a single story source in multiple language combinations (EN/ES/DE) and come with QR code-based audio read-aloud functionality. Built with Shopify for commerce, Firebase for auth & push notifications, and Cloudflare for CDN.',
+    techStack: ['Next.js', 'React Native', 'Expo', 'Shopify', 'Firebase', 'Firestore', 'Zustand', 'Tailwind CSS', 'NativeWind', 'Cloudflare', 'NX Mono Repo'],
+    link: 'https://www.tatiland.store'
+  },
+  {
+    id: 'p2',
+    title: 'Typingcompetition',
+    description: 'A real-time online typing competition platform built as a full NX mono repo with micro-services communicating via gRPC. Features include live typing races, user profiles with analytics, a heatmap visualizer for keystrokes, a chat module, and detailed typing statistics. The BFF layer connects a React frontend to multiple backend services backed by MongoDB and Docker.',
+    techStack: ['React', 'Node.js', 'gRPC', 'WebSockets', 'MongoDB', 'Docker', 'NX Mono Repo', 'MUI', 'TypeScript'],
+    link: undefined
+  },
+  {
+    id: 'p3',
+    title: 'Baby Tracker',
+    description: 'A Progressive Web App (PWA) for tracking baby sleep and daily care events, designed for multi-user sharing between parents and caregivers. Features include night sleep & nap tracking with awakening logs, a live dashboard with daily/weekly insights, care event logging (diapering, breastfeeding, bottle feeds, solids), role-based membership sharing per baby profile, and Playwright-covered E2E tests.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Firebase Auth', 'Cloud Firestore', 'Firebase Hosting', 'PWA', 'Playwright'],
+    link: undefined
+  }
+];
+
 export const SYSTEM_INSTRUCTION = `
 You are an AI assistant for Stefan Binder's portfolio website.
 Your sole purpose is to answer questions about Stefan's professional background.
@@ -177,8 +201,14 @@ ${EDUCATION.map(e => `- ${e.degree} at ${e.institution} (${e.period})`).join('\n
 Skills:
 ${Object.entries(SKILLS).map(([cat, items]) => `${cat}: ${items.join(', ')}`).join('\n')}
 
+CERTIFICATES:
+${CERTIFICATES.map(c => `- ${c.name} (${c.issuer} - ${c.date} - ${c.link})`).join('\n')}
+
 Languages spoken:
 ${LANGUAGES.map(l => `- ${l.name} (${l.level})`).join('\n')}
+
+Personal Projects:
+${PROJECTS.map(p => `- ${p.title}: ${p.description} Tech stack: ${p.techStack.join(', ')}${p.link ? ` | Link: ${p.link}` : ''}`).join('\n')}
 
 Loves to create structured, readable, and modularised code.
 Participates in voluntary service as a firefighter and Toastmaster member.

@@ -1,7 +1,7 @@
 import type { Route } from "./+types/cv";
 import { GlassCard } from '../components/GlassCard';
-import { Download, Briefcase, GraduationCap, Phone, Mail } from 'lucide-react';
-import { EXPERIENCE, USER_NAME, USER_TITLE, CERTIFICATES, EDUCATION, USER_PHONE, USER_EMAIL, SKILLS, LANGUAGES } from '../constants';
+import { Download, Briefcase, GraduationCap, Phone, Mail, ExternalLink, FolderOpen } from 'lucide-react';
+import { EXPERIENCE, USER_NAME, USER_TITLE, CERTIFICATES, EDUCATION, USER_PHONE, USER_EMAIL, SKILLS, LANGUAGES, PROJECTS } from '../constants';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -79,6 +79,43 @@ export default function CV() {
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      </GlassCard>
+      <GlassCard delay={200} className="p-8 md:p-12 mb-6 bg-white/95 text-gray-800">
+        {/* Projects */}
+        <section className="mb-0">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2 uppercase tracking-wider">
+            <FolderOpen className="text-emerald-600" />
+            Personal Projects
+          </h2>
+          <div className="space-y-8">
+            {PROJECTS.map((project) => (
+              <div key={project.id} className="relative">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                  <h3 className="text-lg font-bold text-gray-900 uppercase">{project.title}</h3>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors whitespace-nowrap"
+                    >
+                      <ExternalLink size={14} />
+                      {project.link.replace(/^https?:\/\//, '')}
+                    </a>
+                  )}
+                </div>
+                <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-3">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech) => (
+                    <span key={tech} className="px-2 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded text-xs font-medium">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
