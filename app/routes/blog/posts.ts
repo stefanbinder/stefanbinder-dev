@@ -7,6 +7,12 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'the-rag-wall',
+    title: 'The RAG Wall: Architecting a Sovereign Second Brain',
+    subtitle: 'The dream of a "Sovereign Second Brain" is simple: a private, local ecosystem that knows everything you know—from your bank statements to your camera EXIF data—without leaking your soul to the public cloud.',
+    date: '2026-02-25'
+  },
+  {
     slug: 'building-the-sovereign-second-brain',
     title: 'Building the Sovereign Second Brain',
     subtitle: 'I’ve always hated the trade-off.',
