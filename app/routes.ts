@@ -4,6 +4,7 @@ export default [
   index("routes/home.tsx"),
   route("/cv", "routes/cv.tsx"),
   route("/blog", "routes/blog/index.tsx"),
+  route("/blog/sovereign-intelligence-my-independent-ai-is-public", "routes/blog/sovereign-intelligence-my-independent-ai-is-public.tsx"),
   route("/blog/the-rag-wall", "routes/blog/the-rag-wall.tsx"),
   route("/blog/building-the-sovereign-second-brain", "routes/blog/building-the-sovereign-second-brain.tsx"),
   route("/blog/the-art-of-failing-forward", "routes/blog/the-art-of-failing-forward.tsx"),
