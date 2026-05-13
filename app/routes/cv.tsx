@@ -50,7 +50,7 @@ export default function CV() {
         {/* Bio Section */}
         <section>
           <p className="text-gray-700 leading-relaxed text-lg">
-            Highly versatile Senior Full Stack Engineer focused on defining future-proof systems,
+            Highly versatile Senior Software Engineer focused on defining future-proof systems,
             with a recent high focus on Frontend development. I drive high-performing teams by
             balancing deep technical ownership with guidance on best practices and modular code
             structure. A curious all-rounder committed to continuous learning and platform

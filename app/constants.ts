@@ -1,8 +1,8 @@
 import type { Certificate, Experience, SocialLink, Education, Language, Project } from './types';
 
 export const USER_NAME = "Stefan Binder";
-export const USER_TITLE = "Senior Full Stack Engineer";
-export const USER_BIO = "Highly versatile Senior Full Stack Engineer focused on defining future-proof systems, with a recent high focus on Frontend development. I drive high-performing teams by balancing deep technical ownership with guidance on best practices and modular code structure. A curious all-rounder committed to continuous learning and platform excellence.";
+export const USER_TITLE = "Senior Software Engineer";
+export const USER_BIO = "Highly versatile Senior Software Engineer focused on defining future-proof systems, with a recent high focus on Frontend development. I drive high-performing teams by balancing deep technical ownership with guidance on best practices and modular code structure. A curious all-rounder committed to continuous learning and platform excellence.";
 export const USER_PHONE = "+43 676 / 97 97 205";
 export const USER_EMAIL = "stefan.binder89@gmail.com";
 
