@@ -15,8 +15,8 @@ export default function CV() {
     <div className="max-w-4xl mx-auto pt-20 pb-24 px-4">
       <div className="flex justify-end mb-6 print:hidden animate-fadeInUp">
         <a
-          href="/CV-Stefan-Binder-Senior-Full-Stack-Engineer.pdf"
-          download="CV-Stefan-Binder-Senior-Full-Stack-Engineer.pdf"
+          href="/stefan-binder-senior-software-engineer.pdf"
+          download="stefan-binder-senior-software-engineer.pdf"
           className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors font-medium shadow-lg"
         >
           <Download size={18} />
@@ -51,9 +51,9 @@ export default function CV() {
         <section>
           <p className="text-gray-700 leading-relaxed text-lg">
             Highly versatile Senior Software Engineer focused on defining future-proof systems,
-            with a recent high focus on Frontend development. I drive high-performing teams by
-            balancing deep technical ownership with guidance on best practices and modular code
-            structure. A curious all-rounder committed to continuous learning and platform
+            with a heavy focus on Developer Experience (DX) and internal tooling. I drive high-performing teams by
+            balancing deep technical ownership with establishing best practices, "documentation as code" guidelines,
+            and modular code structure. A curious all-rounder committed to continuous learning and platform
             excellence.
           </p>
         </section>

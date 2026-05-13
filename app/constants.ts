@@ -2,7 +2,7 @@ import type { Certificate, Experience, SocialLink, Education, Language, Project 
 
 export const USER_NAME = "Stefan Binder";
 export const USER_TITLE = "Senior Software Engineer";
-export const USER_BIO = "Highly versatile Senior Software Engineer focused on defining future-proof systems, with a recent high focus on Frontend development. I drive high-performing teams by balancing deep technical ownership with guidance on best practices and modular code structure. A curious all-rounder committed to continuous learning and platform excellence.";
+export const USER_BIO = "Highly versatile Senior Software Engineer focused on defining future-proof systems, with a heavy focus on Developer Experience (DX) and internal tooling. I drive high-performing teams by balancing deep technical ownership with establishing best practices, \"documentation as code\" guidelines, and modular code structure. A curious all-rounder committed to continuous learning and platform excellence.";
 export const USER_PHONE = "+43 676 / 97 97 205";
 export const USER_EMAIL = "stefan.binder89@gmail.com";
 
@@ -26,20 +26,32 @@ export const CERTIFICATES: Certificate[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
+    id: 'e0',
+    role: 'AI Engineer',
+    company: '@MyIndependent.ai (Open Source)',
+    period: '11/2025 – Today',
+    description: [
+      'Local-First RAG: Built a private AI ecosystem using Docker, Qdrant (Vector DB), and Neo4j (GraphRAG) to process personal data without public internet exposure.',
+      'Agentic Workflows: Implemented query transformation and multi-search retrieval using Llama for local routing and Gemini 1.5 Pro for complex reasoning.',
+      'Advanced Retrieval: Developed a hybrid search system combining BM25 and Vector embeddings with cross-encoder reranking to optimize context precision.',
+      'Infrastructure: Automated ingestion pipelines for 10+ data importers with PII redaction protocols.'
+    ]
+  },
+  {
     id: 'e1',
-    role: 'Chapter Lead & Senior Frontend Engineer',
+    role: 'Chapter Lead & Senior Software Engineer',
     company: '@XXXLDigital',
     period: '12/2021 – Today',
     description: [
-      'Defined the strategic direction for the frontend architecture, including implementing Server-Side Rendering (SSR) and applying Domain-Driven Design (DDD) and NX mono repository principles.',
+      'Defined the strategic direction for the platform architecture, managing scalable build ecosystems using NX mono repository principles, and leading the implementation of Server-Side Rendering (SSR) to optimize content delivery.',
       'Drove platform reliability and efficiency by managing DevOps tasks, including Kubernetes, ArgoCD, Argo Workflows, Istio, Cloudflare configuration, and leveraging Dynatrace for observability.',
-      'Founded and Initiated the Kosmos Design System team, responsible for defining requirements and the technical direction for the framework-agnostic component library.',
+      'Founded the Kosmos Design System team, establishing comprehensive technical documentation to drive developer adoption while defining requirements and the technical direction for the framework-agnostic component library.',
       'Mentored developers and fostered continuous improvement by conducting regular 1:1s and identifying growth opportunities within the team.'
     ]
   },
   {
     id: 'e2',
-    role: 'Senior Frontend Engineer',
+    role: 'Senior Software Engineer',
     company: '@XXXLDigital',
     period: '10/2019 – 11/2021',
     description: [
@@ -56,8 +68,8 @@ export const EXPERIENCE: Experience[] = [
     description: [
       'Managed all facets of business operations, including customer acquisition, tax & accounting, and financial management.',
       'Delivered full-lifecycle project execution, transitioning projects from requirement analysis over agile programming to maintenance.',
-      'Architected and Developed the Wooter e-commerce platform (React Frontend) for ordering sport apparel and managing sports leagues.',
-      'Launched and Maintained the project myStudentjob, a student job platform implemented with AngularJS and Laravel.'
+      'Architected and Developed the Wooter e-commerce platform (React Frontend) for ordering sport apparel and managing sports leagues (schedule, statistics, team/player).',
+      'Launched and maintained the project myStudentjob, a student job platform implemented with AngularJS and Laravel.'
     ]
   },
   {
@@ -68,27 +80,16 @@ export const EXPERIENCE: Experience[] = [
     description: [
       'Directed Intranet development projects, serving as the Project Manager for Erste Bank\'s implementation.',
       'Customized and Enhanced Gentics products, including ECMS Content.Node, Java Web Portal.Node, and the JS wysiwyg Editor Aloha.',
-      'Developed a Content-Importer into ECMS via a NodeJS application and a Social Media Wall PHP application.'
+      'Developed a robust Content-Importer into ECMS via NodeJS, demonstrating deep experience in data ingestion pipelines and content management workflows.'
     ]
   },
   {
     id: 'e5',
-    role: 'HELPDESK REPRESENTATIVE',
-    company: 'CSC AUSTRIA GMBH (WWW.CSC.COM)',
-    period: '08/2011 - 11/2011',
+    role: 'Web Developer & "Designer"',
+    company: '@HC-Media',
+    period: '01/2012 – 12/2013',
     description: [
-      'Abteilung: MSS Managed Services Sector',
-      'Helpdesk Representative, 1st & 2nd Level Support',
-      'Network & Server Administration',
-    ]
-  },
-  {
-    id: 'e6',
-    role: 'SACHBEARBEITER',
-    company: 'RAIFFEISEN DATEN SERVICE CENTER (WWW.RSC.AT)',
-    period: '05/2008 - 07/2011',
-    description: [
-      'Department: Cash Management Support & Infodienste Maintainance of Cash-Management accounts, cashpooling (arrangements, change of condition, deletions), diverse statisticreports and compensation of charges. Customer correspondence for Western Union',
+      'Executed small to medium-sized web projects utilizing various CMS platforms (Wordpress, Joomla, Typo3) and WooCommerce.'
     ]
   }
 ];
@@ -118,16 +119,12 @@ export const EDUCATION: Education[] = [
 ];
 
 export const SKILLS = {
-  "Software Architecture": ["Microservices", "Domain-Driven Design", "NX Mono Repo", "Design Systems"],
-  "Programming Languages": ["JavaScript (ES6)", "TypeScript", "Python", "Go-Lang", "PHP"],
-  "Frameworks & Libraries": ["ReactJS", "React Native", "NextJS", "Remix", "Zustand", "AngularJS", "NodeJS (Express)", "Laravel", "Apollo GraphQL", "HTML5", "CSS3", "SCSS", "Tailwind"],
-  "API & Backend": ["GraphQL", "REST", "gRPC", "WebSockets", "API Gateways"],
-  "Platform & DevOps": ["Docker", "Kubernetes", "Istio", "Cloudflare", "Dynatrace", "ArgoCD", "GitHub Actions", "Git", "GitHub"],
-  "Databases": ["Postgres", "MongoDB", "Redis"],
-  "CMS": ["WordPress", "Typo3", "Joomla", "Shopify", "Strapi"],
-  "Tooling": ["Vite", "Webpack", "NX", "Expo"],
-  "Testing": ["Vitest", "Cypress", "Playwright", "Jest"],
-  "Design Tooling": ["Amazon StyleDictionary", "Storybook", "Figma"],
+  "Software Architecture": ["Global Scalability (50M+ sessions)", "Distributed Systems", "Domain-Driven Design (DDD)", "Modular Monorepos (NX)", "Event-Driven Design", "Clean Architecture", "RAG", "LLMs"],
+  "Frontend Development": ["ReactJS", "ES6", "TypeScript", "React Native", "NextJS", "React Router V7", "SCSS", "Tailwind"],
+  "Backend & Data": ["NodeJS (Express)", "GOLang", "Python", "PostgreSQL", "MongoDB", "Redis", "REST", "ApolloJS GraphQL", "gqlgen", "FastAPI", "Vector Databases (Qdrant, Neo4j)"],
+  "Platform & DevOps": ["GCP", "Kubernetes", "Istio", "Cloudflare", "Dynatrace", "ArgoCD & Argo Rollouts", "GitHub Actions"],
+  "CMS & Tooling": ["Wordpress", "Typo3", "Joomla", "Shopify", "Gentics Content.Node", "Vite", "Webpack", "GitHub"],
+  "Design Systems": ["Atomic Design", "Design Token Principles", "Amazon Style Dictionary"],
 };
 
 export const LANGUAGES: Language[] = [
